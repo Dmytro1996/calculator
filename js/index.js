@@ -52,8 +52,13 @@ function equalPressed() {
      display.value=equation.join('');
   }
   let res=eval(display.value);
+  if (res=='Infinity') {
+      alert('You cannot divide by zero');
+      delPressed();
+  } else {
   display.value=res;
   equation=[res];
+  }
 }
 const sqrtButton=document.querySelector('.sqrt');
 sqrtButton.addEventListener('click', sqrtPressed);
